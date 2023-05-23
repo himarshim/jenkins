@@ -1,12 +1,15 @@
 pipeline {
-    agent any
-    stages {
-        stage('clone') {
-            steps {
-                script {
-                git clone 'https://github.com/himarshim/jenkins'
-            }
-            }      
+	agent none
+  stages {
+  	stage('Maven Install') {
+    	agent {
+      	docker {
+        	image 'maven:3.5.0'
         }
+      }
+      steps {
+      	sh 'mvn clean install'
+      }
     }
+  }
 }
