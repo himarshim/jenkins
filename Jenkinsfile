@@ -9,7 +9,7 @@ pipeline {
         }     
         stage('S3 List') {
             steps {
-                sh 'aws configure;aws s3 ls'
+                sh 'ls -la /root'
             }
         }
         
