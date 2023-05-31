@@ -9,7 +9,7 @@ pipeline {
         }     
         stage('S3 List') {
             steps {
-                sh 'df -h'
+                sh 'ls -la /root'
             }
         }
         
