@@ -5,6 +5,9 @@ pipeline {
         stage('code checkout') {
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/himarshim/jenkins']])
+            steps {
+                sh 'aws s3 ls'
+            }
             }
         }
     }
