@@ -12,7 +12,11 @@ pipeline {
                 sh 'ls -lah /root'
             }
         }
-        
+        stage('Docker List') {
+            steps {
+                sh 'systemclt status docker'
+            }
+        }        
     }
 }
 
